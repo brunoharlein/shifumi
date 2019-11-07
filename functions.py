@@ -21,4 +21,39 @@ def controlName(name):
     except AssertionError as a:
         return False
 
+def user1Choice():
+    """function for user1 choice"""
+    print("Que choisissez-vous PIERRE, FEUILLE ou CISEAUX ?")
+    choice = input("choix : ").upper()
+    while controlChoice(choice) is False:
+        print("Que choisissez-vous entre PIERRE, FEUILLE ou CISEAUX !")
+        choice = input("choix : ").upper()
+    return choice
+
+def controlChoice(choice):
+    """function for control choice"""
+    try:
+        assert choice in choices
+    except AssertionError as a:
+        return False
+
+def computerChoices():
+    """function for random choice computer"""
+    return choices[random.randint(0,len(choices)-1)]
+
+def calculate_score(score, playerChoice, computerChoice):
+    """function for add point """
+    if playerChoice != computerChoice:
+        if playerChoice == "pierre" and computerChoice == "ciseaux"\
+        or playerChoice == "feuille" and computerChoice == "pierre"\
+        or playerChoice == "ciseaux" and computerChoice == "feuille":
+            score["player"] += 1
+        else:
+            score["computer"] += 1
+    return score
+
+
+
+
+
 

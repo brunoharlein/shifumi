@@ -32,3 +32,14 @@ score = {
 #ask name player
 user1 = playerName()
 
+#start choice program with loop
+while score["player"] != 3 and score["computer"] != 3:
+    playerChoice = user1Choice()
+    # generate random choice computer
+    computerChoice = computerChoices()
+    # update the scores dictionnary
+    scores = calculateScore(score, playerChoice, computerChoice)
+    print("L'ordinateur a fait {} comme choix".format(computerChoice))
+    print("{} score : {} | ordinateur score : {}".format(user1, score["player"], score["computer"]))
+
+
