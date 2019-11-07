@@ -8,7 +8,7 @@ choices = ["PIERRE", "FEUILLE", "CISEAUX"]
 
 def playerName():
     """function for ask player name"""
-    name = input("votre nom ")
+    name = input("votre nom")
     while controlName(name) is False:
         print("votre nom doit contenir au minimum 2 caractere et maxi 15")
         name = input("votre nom")
@@ -38,15 +38,15 @@ def controlChoice(choice):
         return False
 
 def computerChoices():
-    """function for random choice computer"""
+    """function for random computer choices"""
     return choices[random.randint(0,len(choices)-1)]
 
-def calculate_score(score, playerChoice, computerChoice):
+def calculateScore(score, playerChoice, computerChoice):
     """function for add point """
     if playerChoice != computerChoice:
-        if playerChoice == "pierre" and computerChoice == "ciseaux"\
-        or playerChoice == "feuille" and computerChoice == "pierre"\
-        or playerChoice == "ciseaux" and computerChoice == "feuille":
+        if playerChoice == "PIERRE" and computerChoice == "CISEAUX"\
+        or playerChoice == "FEUILLE" and computerChoice == "PIERRE"\
+        or playerChoice == "CISEAUX" and computerChoice == "FEUILLE":
             score["player"] += 1
         else:
             score["computer"] += 1

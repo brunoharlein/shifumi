@@ -15,11 +15,15 @@ pygame.mixer.music.load("lord.mp3") #load sound
 pygame.mixer.music.play() #play sound
 time.sleep(2) #2 seconds before start game
 print("Dans quelques secondes le programme commencera")
-time.sleep(4)
-print("Ceci est le meilleur jeu du monde")
-time.sleep(3)
-print("Il est temps de rejoindre Golum")
-time.sleep(3)
+time.sleep(2)
+print("Une mort certaine. Une faible chance de succès…")
+time.sleep(2)
+print("Un Anneau pour les gouverner tous.")
+time.sleep(2)
+print("Un Anneau pour les trouver.")
+time.sleep(2)
+print("Un Anneau pour les amener tous et dans les ténèbres les lier.")
+time.sleep(1)
 #end music program
 
 #score user1 and computer in dictionary
@@ -29,6 +33,7 @@ score = {
 }
 
 #start program
+
 #ask name player
 user1 = playerName()
 
@@ -41,5 +46,22 @@ while score["player"] != 3 and score["computer"] != 3:
     scores = calculateScore(score, playerChoice, computerChoice)
     print("L'ordinateur a fait {} comme choix".format(computerChoice))
     print("{} score : {} | ordinateur score : {}".format(user1, score["player"], score["computer"]))
+
+#display message winner or looser
+
+if score["player"] > score["computer"]:
+    pygame.mixer.music.load("final.mp3")  # load sound
+    print("Bravo l'anneau est dans les flammes du Mordor !!")
+    pygame.mixer.music.play()  # play sound
+    time.sleep(10)
+else:
+    pygame.mixer.music.load("street.mp3")  # load sound
+    pygame.mixer.music.play()  # play sound
+    print("Sauron vient de mettre l'anneau magique c'est la fin !!")
+    time.sleep(10)
+
+#end program
+
+
 
 
