@@ -30,7 +30,7 @@ def shifumi():
     time.sleep(1)
     #end music program
 
-#score user1 and computer in dictionary
+    #score user1 and computer in dictionary
     score = {
         "player": 0,
         "computer": 0
@@ -52,23 +52,29 @@ def shifumi():
     #display message winner or looser
 
     if score["player"] > score["computer"]:
+        print("Bravo l'anneau termine dans les flammes du Mordor !!")
         pygame.mixer.music.load("final.mp3")  # load sound
-        print("Bravo l'anneau est dans les flammes du Mordor !!")
         pygame.mixer.music.play()  # play sound
         time.sleep(10)
     else:
+        print("Sauron vient de mettre l'anneau magique c'est la fin !!")
         pygame.mixer.music.load("street.mp3")  # load sound
         pygame.mixer.music.play()  # play sound
-        print("Sauron vient de mettre l'anneau magique c'est la fin !!")
         time.sleep(10)
-
-    if __name__ == '__main__':
-        shifumi()
-        os.execv(__file__, sys.argv)
+    end = True
+    while end:
+        ask = input("Voulez vous poursuivre : oui / non ?")
+        if ask == "oui":
+            if __name__ == '__main__':
+                shifumi()
+                os.execv(__file__, sys.argv)
+        else:
+            #exit(0) from sys import exit for program stop
+            end = False
 
 #end program
-shifumi() #start program
 
+shifumi() #start program function
 
 
 
